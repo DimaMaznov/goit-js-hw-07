@@ -1,7 +1,26 @@
-"use strict";
+const images = [
+  {
+    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'White and Black Long Fur Cat',
+  },
+  {
+    url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+  },
+  {
+    url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Group of Horses Running',
+  }
+];
 
-function getShippingMessage (country, price, deliveryFee)
-{return `Shipping to ${country} will cost ${price+deliveryFee} credits`;}
-console.log(getShippingMessage("Australia", 120, 50));
-console.log(getShippingMessage("Germany", 80, 20));
-console.log(getShippingMessage("Sweden", 100, 20));
+
+const list = document.querySelector(".gallery");
+const markup = images
+  .map((image) => `<li class="list-image"> <img src="${image.url}" alt="${image.alt}" /> </li>`)
+  .join("");
+
+
+  list.insertAdjacentHTML("afterbegin", markup);
+
+
+  console.log (list)

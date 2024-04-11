@@ -1,7 +1,10 @@
-"use strict";
+const categories = document.querySelector("#categories");
+const items = categories.querySelectorAll('.item');
+console.log("Number og categories:", items.length)
 
-function makeTransaction (quantity, pricePerDroid)
-{ return `You ordered ${quantity} droids worth ${quantity * pricePerDroid} credits!`;}
-console.log(makeTransaction(5, 3000));
-console.log(makeTransaction(3, 1000));
-console.log(makeTransaction(10, 500));
+items.forEach(item=> {
+const Categories = item.querySelector('h2');
+console.log("Category:", Categories.textContent)
+const Elements = item.querySelectorAll('ul li');
+console.log("Elements:", Elements.length)
+})
